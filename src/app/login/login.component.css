@@ -1,0 +1,10 @@
+#login-section{
+    background-color: #546E7A;
+    padding: .4em;
+    text-align: right;
+}
+
+
+#login-section button{
+    margin-left:0.3em;
+}

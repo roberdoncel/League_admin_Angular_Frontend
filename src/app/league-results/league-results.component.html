@@ -1,0 +1,49 @@
+<p>league-results works!</p>
+
+<h4>{{leagueActive}}</h4>
+
+<h4>Introducir resultado</h4>
+<form [formGroup]="registerResultForm" (ngSubmit)="onSubmitRegisterResult(registerResultForm.value)" class="form-inline">
+    <input type="number" formControlName="leagueId">
+    <input type="text" formControlName="leagueName">
+
+    <label>Equipo Local</label>
+    <select formControlName="team1" class="form-control">
+        <option *ngFor="let team1 of teams" [value]="team1.team">{{team1.team}}</option>
+    </select>
+
+    <label>Equipo Visitante</label>
+    <select formControlName="team2" class="form-control">
+        <option *ngFor="let team2 of teams" [value]="team2.team">{{team2.team}}</option>
+    </select>
+
+    <label>Resultado</label>
+    <input type="number" formControlName="team1Goals" class="form-control">
+    <label> - </label>
+    <input type="number" formControlName="team2Goals" class="form-control">
+
+    <select formControlName="partOfSeason" class="form-control">
+        <option *ngFor="let part of partsOfSeason" [value]="part.name">{{part.name}}</option>
+    </select>
+
+    <button class="btn btn-outline-success" type="submit">Registrar</button>  
+</form>
+
+<h4>Partidos ya jugados</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Equipo local</th>
+            <th>Resultado</th>
+            <th>Equipo visitante</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let res of results">
+            <td>{{res.tul1.team}}</td>
+            <td>{{res.goalsTeam1}} - {{res.goalsTeam2}}</td>
+            <td>{{res.tul2.team}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,26 @@
+
+<div>
+<h3>Elige una liga o añade una nueva</h3>
+
+    <h4>Ligas existentes</h4>
+    <form [formGroup]="selectLeagueForm" (ngSubmit)="onSubmitSelLeague(selectLeagueForm.value)" class="">
+        <div class="form-group mx-sm-3 mb-2">
+            <select formControlName="name" class="form-control">
+                <option *ngFor="let league of leagues" [value]="league.name">{{league.name}}</option>
+            </select>
+            <button type="submit" class="btn btn-outline-info">Cargar Liga</button>
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <h4>Inserta el nombre de la nueva liga</h4>
+    <form [formGroup]="createLeagueForm" (ngSubmit)="onSubmitCreateLeague(createLeagueForm.value)">
+        <div>
+            <label for="leaguename">Nombre de la liga</label>
+            <input id="leaguename" type="text" formControlName="name">
+        </div>
+        <button class="button" type="submit" class="btn btn-outline-success">Crear liga</button>
+    </form>
+</div>

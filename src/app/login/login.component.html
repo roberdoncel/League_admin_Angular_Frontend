@@ -1,0 +1,8 @@
+
+<section id="login-section">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm)">
+        <input type="text" formControlName="username" placeholder="Nombre de usuario">
+        <input type="text" formControlName="password" placeholder="Contraseña">
+        <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+    </form>
+</section>

@@ -1,0 +1,10 @@
+<p>league-start works!</p>
+<form [formGroup]="startLeagueForm" (ngSubmit)="onSubmitStartLeague(startLeagueForm)" class="">
+    <input type="number" formControlName="id">
+    <input type="text" formControlName="name">
+    <button type="submit" class="btn btn-danger">Comenzar liga</button>
+</form>
+
+<p>Una vez empezada la liga no se podrán añadir más equipos.
+    Solo los administradores pueden iniciar la liga.
+</p>

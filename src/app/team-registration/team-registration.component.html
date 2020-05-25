@@ -1,0 +1,43 @@
+<p>team-registration works!</p>
+
+<h4>Liga {{leagueActiveName}}</h4>
+<div>
+    <form [formGroup]="registerTeamForm" (ngSubmit)="onSubmitRegisterTeam(registerTeamForm)" class="form-inline">
+        <input id="league-id" type="number" formControlName="id" class="form-control">
+        <input id="league-name" type="text" formControlName="leaguename" class="form-control">
+
+        <label for="username">Usuario</label>
+        <input id="username" formControlName="username" class="form-control">
+
+        <label for="team">Equipo</label>
+        <input id="team" formControlName="team" class="form-control">
+
+        <label for="password">Contraseña</label>
+        <input id="password" formControlName="password" class="form-control">
+
+        <label for="select-role">Role</label>
+        <select id="select-role" formControlName="role" class="form-control">
+            <option *ngFor="let rol of roles" [value]="rol.rol">{{rol.rol}}</option>
+        </select>
+
+        <button type="submit" class="btn btn-outline-info">Registrar Equipo</button>  
+    </form>
+</div>
+<h4>Equipos inscritos</h4>
+
+<table class="table table-striped">
+    <thead class=""> 
+        <tr>
+            <th  scope="col">Usuario</th>
+            <th  scope="col">Equipo</th>
+            <th  scope="col">Rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reg of registeredTeams">
+            <td>{{reg.user.username}}</td>
+            <td>{{reg.team}}</td>
+            <td>{{reg.role.rol}}</td>
+        </tr>
+    </tbody>
+</table>
