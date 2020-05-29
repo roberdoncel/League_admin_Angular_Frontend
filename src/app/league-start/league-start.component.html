@@ -1,7 +1,7 @@
 <p>league-start works!</p>
 <form [formGroup]="startLeagueForm" (ngSubmit)="onSubmitStartLeague(startLeagueForm)" class="">
-    <input type="number" formControlName="id">
-    <input type="text" formControlName="name">
+    <input hidden type="number" formControlName="id">
+    <input hidden type="text" formControlName="name">
     <button type="submit" class="btn btn-danger">Comenzar liga</button>
 </form>
 

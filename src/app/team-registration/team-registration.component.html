@@ -3,8 +3,8 @@
 <h4>Liga {{leagueActiveName}}</h4>
 <div>
     <form [formGroup]="registerTeamForm" (ngSubmit)="onSubmitRegisterTeam(registerTeamForm)" class="form-inline">
-        <input id="league-id" type="number" formControlName="id" class="form-control">
-        <input id="league-name" type="text" formControlName="leaguename" class="form-control">
+        <input hidden id="league-id" type="number" formControlName="id" class="form-control">
+        <input hidden id="league-name" type="text" formControlName="leaguename" class="form-control">
 
         <label for="username">Usuario</label>
         <input id="username" formControlName="username" class="form-control">

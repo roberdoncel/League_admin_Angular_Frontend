@@ -4,8 +4,8 @@
 
 <h4>Introducir resultado</h4>
 <form [formGroup]="registerResultForm" (ngSubmit)="onSubmitRegisterResult(registerResultForm.value)" class="form-inline">
-    <input type="number" formControlName="leagueId">
-    <input type="text" formControlName="leagueName">
+    <input hidden type="number" formControlName="leagueId">
+    <input hidden type="text" formControlName="leagueName">
 
     <label>Equipo Local</label>
     <select formControlName="team1" class="form-control">
